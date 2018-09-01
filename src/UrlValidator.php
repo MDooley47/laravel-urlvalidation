@@ -9,12 +9,18 @@ class UrlValidator
 {
     /**
      * @param string $url
-     * @param array  $options
+     * @param array|string $options
      *
      * @return bool
      */
-    public static function match($url, array $options)
+    public static function match($url, $options)
     {
+        if (! is_array($options)) {
+            $tmpString = $options;
+            $options = null;
+            $options['host'] = $tmpString;
+        }
+
         // build the rules
         $rules = '';
         foreach ($options as $key => $value) {
