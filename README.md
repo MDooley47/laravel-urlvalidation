@@ -1,5 +1,14 @@
 # laravel-urlvalidator
 
+## Install
+You can install the package with composer:
+
+```bash
+composer require mdooley47/laravel-urlvalidator
+```
+
+## How To Use
+
 Adds more robust ways to validate URLs.
 
 You can use the `\MDooley47\UrlValidator\UrlValidator::match` method to validate urls like so:
