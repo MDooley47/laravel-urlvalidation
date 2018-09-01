@@ -8,14 +8,14 @@ use Illuminate\Support\Str;
 class UrlValidator
 {
     /**
-     * @param string $url
+     * @param string       $url
      * @param array|string $options
      *
      * @return bool
      */
     public static function match($url, $options)
     {
-        if (! is_array($options)) {
+        if (!is_array($options)) {
             $tmpString = $options;
             $options = null;
             $options['host'] = $tmpString;
