@@ -37,7 +37,7 @@ Or you can use it in a normal Validator like so
         'url' => 'https://user:pass@sub.domain.tld/path?query=true#fragment'
     ],
     [
-        'url' => 'required|url|scheme:https|user:user|pass:pass|subdomain:sub|domain:domain|tld:tld|path:path|query:query=true|fragment:fragment|host:sub.domain.tld',
+        'url' => 'required|url|scheme:https|user:user|pass:pass|subdomain:sub|domain:domain|tld:tld|path:/path|query:query=true|fragment:fragment|host:sub.domain.tld',
     ]
 );
 ```
