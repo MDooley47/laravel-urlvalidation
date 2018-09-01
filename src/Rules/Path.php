@@ -5,8 +5,7 @@ namespace MDooley47\UrlValidator\Rules;
 use Illuminate\Support\Str;
 
 /**
- * Class Port
- * @package MDooley47\UrlValidator\Rules
+ * Class Port.
  */
 class Path
 {
@@ -24,7 +23,7 @@ class Path
     {
         // $validator->requireParameterCount(1, $parameters, 'path');
 
-        return (Str::lower(parse_url($value, PHP_URL_PATH)) == Str::lower($parameters[0]));
+        return Str::lower(parse_url($value, PHP_URL_PATH)) == Str::lower($parameters[0]);
     }
 
     /**

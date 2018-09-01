@@ -5,8 +5,7 @@ namespace MDooley47\UrlValidator\Rules;
 use Illuminate\Support\Str;
 
 /**
- * Class Subdomain
- * @package MDooley47\UrlValidator\Rules
+ * Class Subdomain.
  */
 class Subdomain
 {
@@ -24,8 +23,8 @@ class Subdomain
     {
         // $validator->requireParameterCount(1, $parameters, 'subdomain');
 
-        return (Str::lower(explode('.', parse_url($value, PHP_URL_HOST))[0])
-            == Str::lower($parameters[0]));
+        return Str::lower(explode('.', parse_url($value, PHP_URL_HOST))[0])
+            == Str::lower($parameters[0]);
     }
 
     /**

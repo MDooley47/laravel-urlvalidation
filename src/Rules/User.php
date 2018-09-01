@@ -5,8 +5,7 @@ namespace MDooley47\UrlValidator\Rules;
 use Illuminate\Support\Str;
 
 /**
- * Class User
- * @package MDooley47\UrlValidator\Rules
+ * Class User.
  */
 class User
 {
@@ -24,7 +23,7 @@ class User
     {
         // $validator->requireParameterCount(1, $parameters, 'user');
 
-        return (Str::lower(parse_url($value, PHP_URL_USER)) == Str::lower($parameters[0]));
+        return Str::lower(parse_url($value, PHP_URL_USER)) == Str::lower($parameters[0]);
     }
 
     /**

@@ -1,24 +1,23 @@
 <?php
+
 namespace MDooley47\UrlValidator;
 
-use MDooley47\UrlValidator\Rules\Scheme;
-use MDooley47\UrlValidator\Rules\User;
-use MDooley47\UrlValidator\Rules\Pass;
-use MDooley47\UrlValidator\Rules\Host;
-use MDooley47\UrlValidator\Rules\Subdomain;
-use MDooley47\UrlValidator\Rules\Domain;
-use MDooley47\UrlValidator\Rules\Tld;
-use MDooley47\UrlValidator\Rules\Port;
-use MDooley47\UrlValidator\Rules\Path;
-use MDooley47\UrlValidator\Rules\Query;
-use MDooley47\UrlValidator\Rules\Fragment;
-
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\ServiceProvider;
+use MDooley47\UrlValidator\Rules\Domain;
+use MDooley47\UrlValidator\Rules\Fragment;
+use MDooley47\UrlValidator\Rules\Host;
+use MDooley47\UrlValidator\Rules\Pass;
+use MDooley47\UrlValidator\Rules\Path;
+use MDooley47\UrlValidator\Rules\Port;
+use MDooley47\UrlValidator\Rules\Query;
+use MDooley47\UrlValidator\Rules\Scheme;
+use MDooley47\UrlValidator\Rules\Subdomain;
+use MDooley47\UrlValidator\Rules\Tld;
+use MDooley47\UrlValidator\Rules\User;
 
 /**
- * Class UrlValidatorServiceProvider
- * @package MDooley47\UrlValidator
+ * Class UrlValidatorServiceProvider.
  */
 class UrlValidatorServiceProvider extends ServiceProvider
 {

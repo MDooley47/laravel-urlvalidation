@@ -5,8 +5,7 @@ namespace MDooley47\UrlValidator\Rules;
 use Illuminate\Support\Str;
 
 /**
- * Class Scheme
- * @package MDooley47\UrlValidator\Rules
+ * Class Scheme.
  */
 class Scheme
 {
@@ -24,7 +23,7 @@ class Scheme
     {
         // $validator->requireParameterCount(1, $parameters, 'scheme');
 
-        return (Str::lower(parse_url($value, PHP_URL_SCHEME)) == Str::lower($parameters[0]));
+        return Str::lower(parse_url($value, PHP_URL_SCHEME)) == Str::lower($parameters[0]);
     }
 
     /**
