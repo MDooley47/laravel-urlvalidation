@@ -2,14 +2,14 @@
 
 namespace MDooley47\UrlValidator;
 
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class UrlValidator
 {
     /**
      * @param string $url
-     * @param array $options
+     * @param array  $options
      *
      * @return bool
      */
@@ -18,7 +18,7 @@ class UrlValidator
         // build the rules
         $rules = '';
         foreach ($options as $key => $value) {
-            switch(Str::lower($key)) {
+            switch (Str::lower($key)) {
                 case 'scheme':
                     $rules .= "|scheme:${value}";
                     break;
@@ -56,7 +56,7 @@ class UrlValidator
         }
 
         $validate = Validator::make(['url' => $url], [
-            'url' => 'required|url' . $rules,
+            'url' => 'required|url'.$rules,
         ]);
 
         return $validate->passes();

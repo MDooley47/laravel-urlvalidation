@@ -5,8 +5,7 @@ namespace MDooley47\UrlValidator\Rules;
 use Illuminate\Support\Str;
 
 /**
- * Class Tld
- * @package MDooley47\UrlValidator\Rules
+ * Class Tld.
  */
 class Tld
 {
@@ -24,8 +23,8 @@ class Tld
     {
         // $validator->requireParameterCount(1, $parameters, 'tld');
 
-        return (Str::lower(explode('.', parse_url($value, PHP_URL_HOST))[2])
-            == Str::lower($parameters[0]));
+        return Str::lower(explode('.', parse_url($value, PHP_URL_HOST))[2])
+            == Str::lower($parameters[0]);
     }
 
     /**

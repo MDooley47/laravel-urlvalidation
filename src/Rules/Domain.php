@@ -5,8 +5,7 @@ namespace MDooley47\UrlValidator\Rules;
 use Illuminate\Support\Str;
 
 /**
- * Class Domain
- * @package MDooley47\UrlValidator\Rules
+ * Class Domain.
  */
 class Domain
 {
@@ -24,8 +23,8 @@ class Domain
     {
         // $validator->requireParameterCount(1, $parameters, 'domain');
 
-        return (Str::lower(explode('.', parse_url($value, PHP_URL_HOST))[1])
-            == Str::lower($parameters[0]));
+        return Str::lower(explode('.', parse_url($value, PHP_URL_HOST))[1])
+            == Str::lower($parameters[0]);
     }
 
     /**

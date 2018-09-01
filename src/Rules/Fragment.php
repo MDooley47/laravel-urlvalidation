@@ -5,8 +5,7 @@ namespace MDooley47\UrlValidator\Rules;
 use Illuminate\Support\Str;
 
 /**
- * Class Fragment
- * @package MDooley47\UrlValidator\Rules
+ * Class Fragment.
  */
 class Fragment
 {
@@ -24,7 +23,7 @@ class Fragment
     {
         // $validator->requireParameterCount(1, $parameters, 'fragment');
 
-        return (Str::lower(parse_url($value, PHP_URL_FRAGMENT)) == Str::lower($parameters[0]));
+        return Str::lower(parse_url($value, PHP_URL_FRAGMENT)) == Str::lower($parameters[0]);
     }
 
     /**

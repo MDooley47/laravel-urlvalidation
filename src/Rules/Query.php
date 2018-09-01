@@ -5,8 +5,7 @@ namespace MDooley47\UrlValidator\Rules;
 use Illuminate\Support\Str;
 
 /**
- * Class Query
- * @package MDooley47\UrlValidator\Rules
+ * Class Query.
  */
 class Query
 {
@@ -24,7 +23,7 @@ class Query
     {
         // $validator->requireParameterCount(1, $parameters, 'query');
 
-        return (Str::lower(parse_url($value, PHP_URL_QUERY)) == Str::lower($parameters[0]));
+        return Str::lower(parse_url($value, PHP_URL_QUERY)) == Str::lower($parameters[0]);
     }
 
     /**

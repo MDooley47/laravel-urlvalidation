@@ -5,8 +5,7 @@ namespace MDooley47\UrlValidator\Rules;
 use Illuminate\Support\Str;
 
 /**
- * Class Host
- * @package MDooley47\UrlValidator\Rules
+ * Class Host.
  */
 class Host
 {
@@ -24,7 +23,7 @@ class Host
     {
         // $validator->requireParameterCount(1, $parameters, 'host');
 
-        return (Str::lower(parse_url($value, PHP_URL_HOST)) == Str::lower($parameters[0]));
+        return Str::lower(parse_url($value, PHP_URL_HOST)) == Str::lower($parameters[0]);
     }
 
     /**
