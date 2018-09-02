@@ -7,7 +7,7 @@ You can install the package with composer:
 composer require mdooley47/laravel-urlvalidator
 ```
 
-## How To Use
+## How to Use
 
 Adds more robust ways to validate URLs.
 
@@ -28,6 +28,14 @@ You can use the `\MDooley47\UrlValidator\UrlValidator::match` method to validate
         'host' => 'sub.domain.tld',
     ]);
 // Returns Validator->passes()
+
+// You can pass a string in place of the $options array.
+// This will default to using the host validator.
+// Since we use Str::is, that means we can match a pattern.
+\MDooley47\UrlValidator\UrlValidator::match(
+    'https://user:pass@sub.domain.tld/path?query=true#fragment',
+    'sub.*.tld'
+    );
 ```
 
 Or you can use it in a normal Validator like so
@@ -42,7 +50,6 @@ Or you can use it in a normal Validator like so
 );
 ```
 
-## Limitations
-Right now the subdomain, domain, and tld will **only** match `sub.domain.tld` urls. It will not work with `sub.sub.domain.tld` or `sub.domain.sld.tld`.
-
-These validators also do not work with regex. At this time it is just simple comparisons.
+## How it Works
+Because we use Str::is we have powerful matching options such as using an asterisks (*) as a wild card.
+As a result of using Str::is, for subdomain matching we use the pattern: `${value}.*`, for domain matching we use `*.${value}.*` and for tld matching we use `*.${value}`. The `$value` variable the the pattern you pass in.
