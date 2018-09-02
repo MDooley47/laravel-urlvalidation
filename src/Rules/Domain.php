@@ -23,7 +23,7 @@ class Domain
     {
         $param = Str::lower($parameters[0]);
 
-         return Str::is("*.${param}.*", Str::lower(parse_url($value, PHP_URL_HOST)));
+        return Str::is("*.${param}.*", Str::lower(parse_url($value, PHP_URL_HOST)));
     }
 
     /**
