@@ -21,9 +21,7 @@ class Port
      */
     public function passes($attribute, $value, $parameters, $validator)
     {
-        // $validator->requireParameterCount(1, $parameters, 'port');
-
-        return Str::lower(parse_url($value, PHP_URL_PORT)) == Str::lower($parameters[0]);
+        return Str::is(Str::lower($parameters[0]), Str::lower(parse_url($value, PHP_URL_PORT)));
     }
 
     /**

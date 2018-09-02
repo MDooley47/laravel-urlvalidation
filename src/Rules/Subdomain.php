@@ -21,10 +21,9 @@ class Subdomain
      */
     public function passes($attribute, $value, $parameters, $validator)
     {
-        // $validator->requireParameterCount(1, $parameters, 'subdomain');
+        $param = Str::lower($parameters[0]);
 
-        return Str::lower(explode('.', parse_url($value, PHP_URL_HOST))[0])
-            == Str::lower($parameters[0]);
+        return Str::is("${param}.*", Str::lower(parse_url($value, PHP_URL_HOST)));
     }
 
     /**

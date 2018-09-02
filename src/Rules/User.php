@@ -21,9 +21,7 @@ class User
      */
     public function passes($attribute, $value, $parameters, $validator)
     {
-        // $validator->requireParameterCount(1, $parameters, 'user');
-
-        return Str::lower(parse_url($value, PHP_URL_USER)) == Str::lower($parameters[0]);
+        return Str::is(Str::lower($parameters[0]), Str::lower(parse_url($value, PHP_URL_USER)));
     }
 
     /**

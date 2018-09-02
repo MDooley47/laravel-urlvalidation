@@ -21,9 +21,7 @@ class Path
      */
     public function passes($attribute, $value, $parameters, $validator)
     {
-        // $validator->requireParameterCount(1, $parameters, 'path');
-
-        return Str::lower(parse_url($value, PHP_URL_PATH)) == Str::lower($parameters[0]);
+        return Str::is(Str::lower($parameters[0]), Str::lower(parse_url($value, PHP_URL_PATH)));
     }
 
     /**
